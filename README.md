@@ -32,6 +32,12 @@ possibilité d'exécuter des commandes OS, vol d'information, modification du se
 -on escape les caractères ';'
 
 ## Question 4
+http://localhost/vulnerabilities/fi/?page=../../index.php
+J'ai remonté dans l'arborescence pour trouver index.php
+On peut remonter jusqu'au ficher /etc/passwd ou pire;
+escape des caractères
+Dans le code sur la fonction de redirection, on rajoute des sécurité, escape de caractère
+ou forcer une extension de fichier
 
 
 ## Question 5
