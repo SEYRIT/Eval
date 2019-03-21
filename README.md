@@ -20,4 +20,12 @@ Dirbuster déduit l'arborescence d'un site web depuis les requete HTTP si code 4
 Pour se protéger, on peut limiter le nombre de requete depuis L'IP; Renvoyer code 404(not found) pour tous les fichiers;
 
 ## Question 3
+8.8.8.8; cat /etc/passwd
+chaine après la commande ping, j'affiche le fichier avec le cat 
+possibilité d'exécuter des commandes OS, vol d'information, modification du server;
+-validation des inputs: taille, min and max length;
+-on escape les caractères ';'
+
+## Question 4
+
 
